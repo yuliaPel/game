@@ -1,0 +1,92 @@
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes hideBackground {
+  0% {
+   background-color: gray;
+  }
+  100% {
+   background-color: transparent;
+  }
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  display: grid;
+  grid-auto-columns: min-content;
+}
+
+.cell {
+  height: 60px;
+  width: 60px;
+  border: 1px solid black;
+
+  font-size: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diamonds::after {
+  content: "\25CA";
+  animation: show  1s forwards;
+}
+
+.hearts::after {
+  content: "\2661";
+  animation: show  1s forwards;
+}
+
+.spades::after {
+  content: "\2660";
+  animation: show  1s forwards;
+}
+
+.clubs::after {
+  content: "\2663";
+  animation: show  1s forwards;
+}
+
+.null {
+  background-color: gray;
+  animation: hideBackground  1s forwards;
+}
+
+.null::after {
+  animation: hide  1s forwards;
+}
